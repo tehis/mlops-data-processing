@@ -14,18 +14,12 @@ categories =[
 
 class PostsSpider(scrapy.Spider):
     name = "posts"
-    # start_urls = [
-    #     'https://divar.ir/v/-/gYMyGoK3',
-    #     'https://divar.ir/v/-/QYIiCELF',
-    #     'https://divar.ir/v/-/wYCBnfMZ',
-    # ]
-
 
     def __init__(self, *args, **kwargs):
         super(PostsSpider, self).__init__(*args, **kwargs)
 
         self._posts_data = []
-        # self.start_urls = self._generate_urls()
+        self.start_urls = self._generate_urls()
         self._post_index = 0
         self._file_name = 'posts.csv'
         print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
